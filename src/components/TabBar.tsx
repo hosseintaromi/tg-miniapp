@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname, useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { ProfileCircle, Activity, Wallet3, AddCircle } from "iconsax-react";
+import { User, Activity, Card, Add } from "iconsax-react";
 
 export function TabBar() {
   const pathname = usePathname() || "";
@@ -15,7 +15,7 @@ export function TabBar() {
       key: "profile",
       href: `/${locale}/profile`,
       label: t("tabs.profile"),
-      icon: ProfileCircle,
+      icon: User,
     },
     {
       key: "consumption",
@@ -27,13 +27,13 @@ export function TabBar() {
       key: "payments",
       href: `/${locale}/payments`,
       label: t("tabs.payments"),
-      icon: Wallet3,
+      icon: Card,
     },
     {
       key: "buy",
       href: `/${locale}/buy-coins`,
       label: t("tabs.buy"),
-      icon: AddCircle,
+      icon: Add,
     },
   ];
 
@@ -54,7 +54,7 @@ export function TabBar() {
               href={tab.href}
               className={`flex flex-col items-center px-2 py-2 rounded-md gap-1 ${active ? "text-[var(--brand)]" : "text-[var(--muted)]"}`}
             >
-              <IconComponent size={20} variant={active ? "Bold" : "Outline"} />
+              <IconComponent size={22} variant={active ? "Bold" : "Outline"} color="currentColor" />
               <span className="text-xs">{tab.label}</span>
             </Link>
           );

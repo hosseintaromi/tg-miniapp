@@ -12,17 +12,12 @@ type Props = {
 export default async function LocaleLayout({ children, params }: Props) {
   const { locale } = await params;
   const messages = await getMessages();
-  const dir = locale === "fa" ? "rtl" : "ltr";
 
   return (
-    <html lang={locale} dir={dir}>
-      <body>
-        <NextIntlClientProvider messages={messages}>
-          <ClientProviders>
-            <AppShell>{children}</AppShell>
-          </ClientProviders>
-        </NextIntlClientProvider>
-      </body>
-    </html>
+    <NextIntlClientProvider messages={messages}>
+      <ClientProviders>
+        <AppShell>{children}</AppShell>
+      </ClientProviders>
+    </NextIntlClientProvider>
   );
 }

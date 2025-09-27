@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname, useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { useEffect } from "react";
 import { TabBar } from "./TabBar";
 
 export function AppShell({ children }: { children: React.ReactNode }) {
@@ -19,6 +20,12 @@ export function AppShell({ children }: { children: React.ReactNode }) {
   })();
 
   const locale = params?.locale ?? "en";
+
+  useEffect(() => {
+    const html = document.documentElement;
+    html.lang = locale;
+    html.dir = locale === "fa" ? "rtl" : "ltr";
+  }, [locale]);
 
   return (
     <div className="min-h-dvh flex flex-col">

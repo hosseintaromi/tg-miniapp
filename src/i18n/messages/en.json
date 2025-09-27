@@ -1,0 +1,9 @@
+{
+  "app.title": "Consumption",
+  "tabs.profile": "Profile",
+  "tabs.consumption": "Consumption",
+  "tabs.payments": "Payments",
+  "tabs.buy": "Buy Coins",
+  "profile.balance": "Balance",
+  "coins.suffix": "Coins"
+}

@@ -88,8 +88,32 @@ export function useAppState() {
 }
 
 export const COIN_PACKS: CoinPack[] = [
-  { id: "pk100", coins: 100, priceUsd: 1.99, image: "/images/packs/100.png" },
-  { id: "pk500", coins: 500, priceUsd: 7.99, image: "/images/packs/500.png" },
-  { id: "pk1000", coins: 1000, priceUsd: 14.99, image: "/images/packs/1000.png" },
-  { id: "pk2000", coins: 2000, priceUsd: 24.99, image: "/images/packs/2000.png" },
+  {
+    id: "pk100",
+    coins: 100,
+    priceUsd: 1.99,
+    image:
+      "https://images.unsplash.com/photo-1579621970795-87facc2f976d?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    id: "pk500",
+    coins: 500,
+    priceUsd: 7.99,
+    image:
+      "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    id: "pk1000",
+    coins: 1000,
+    priceUsd: 14.99,
+    image:
+      "https://images.unsplash.com/photo-1567427013953-1c0e0c6f0b18?q=80&w=600&auto=format&fit=crop",
+  },
+  {
+    id: "pk2000",
+    coins: 2000,
+    priceUsd: 24.99,
+    image:
+      "https://images.unsplash.com/photo-1553729459-efe14ef6055d?q=80&w=600&auto=format&fit=crop",
+  },
 ];

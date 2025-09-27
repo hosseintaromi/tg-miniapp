@@ -20,7 +20,11 @@ export default function BuyCoinsPage() {
             className={`card p-4 text-left ${selected === p.id ? "ring-2 ring-[var(--brand)]" : ""}`}
           >
             <div className="flex items-center gap-3">
-              <div className="w-16 h-10 rounded-md bg-[var(--surface-2)]" />
+              <img
+                src={p.image}
+                alt={`${p.coins} coins`}
+                className="w-16 h-10 rounded-md object-cover"
+              />
               <div className="flex-1">
                 <div className="font-semibold">
                   {p.coins.toLocaleString()} {t("coins.suffix")}

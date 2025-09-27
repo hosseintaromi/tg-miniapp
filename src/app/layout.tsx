@@ -15,6 +15,20 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "tg-miniapp",
   description: "Telegram Mini App UI",
+  manifest: "/manifest.json",
+  themeColor: "#7cff3a",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 1,
+    userScalable: false,
+    viewportFit: "cover",
+  },
+  appleWebApp: {
+    capable: true,
+    statusBarStyle: "black-translucent",
+    title: "tg-miniapp",
+  },
 };
 
 export default function RootLayout({

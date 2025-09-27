@@ -1,13 +1,27 @@
 {
-  "app.title": "مصرف",
-  "tabs.profile": "پروفایل",
-  "tabs.consumption": "مصرف",
-  "tabs.payments": "پرداخت‌ها",
-  "tabs.buy": "خرید سکه",
-  "profile.balance": "موجودی",
-  "coins.suffix": "سکه",
-  "consumption.title": "مصرف‌های گذشته",
-  "payments.title": "تراکنش‌های گذشته",
-  "buy.choose": "یک بسته انتخاب کنید",
-  "buy.cta": "خرید"
+  "app": {
+    "title": "مصرف"
+  },
+  "tabs": {
+    "profile": "پروفایل",
+    "consumption": "مصرف",
+    "payments": "پرداخت‌ها",
+    "buy": "خرید سکه"
+  },
+  "profile": {
+    "balance": "موجودی"
+  },
+  "coins": {
+    "suffix": "سکه"
+  },
+  "consumption": {
+    "title": "مصرف‌های گذشته"
+  },
+  "payments": {
+    "title": "تراکنش‌های گذشته"
+  },
+  "buy": {
+    "choose": "یک بسته انتخاب کنید",
+    "cta": "خرید"
+  }
 }

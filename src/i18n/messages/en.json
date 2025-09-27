@@ -1,13 +1,27 @@
 {
-  "app.title": "Consumption",
-  "tabs.profile": "Profile",
-  "tabs.consumption": "Consumption",
-  "tabs.payments": "Payments",
-  "tabs.buy": "Buy Coins",
-  "profile.balance": "Balance",
-  "coins.suffix": "Coins",
-  "consumption.title": "Past Consumption",
-  "payments.title": "Past Transactions",
-  "buy.choose": "Choose a package",
-  "buy.cta": "Buy Now"
+  "app": {
+    "title": "Consumption"
+  },
+  "tabs": {
+    "profile": "Profile",
+    "consumption": "Consumption",
+    "payments": "Payments",
+    "buy": "Buy Coins"
+  },
+  "profile": {
+    "balance": "Balance"
+  },
+  "coins": {
+    "suffix": "Coins"
+  },
+  "consumption": {
+    "title": "Past Consumption"
+  },
+  "payments": {
+    "title": "Past Transactions"
+  },
+  "buy": {
+    "choose": "Choose a package",
+    "cta": "Buy Now"
+  }
 }

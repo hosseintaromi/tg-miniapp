@@ -15,7 +15,14 @@
     "suffix": "سکه"
   },
   "consumption": {
-    "title": "مصرف‌های گذشته"
+    "title": "مصرف‌های گذشته",
+    "featureUsage": "استفاده از قابلیت",
+    "items": {
+      "boostPost": "ارتقای پست",
+      "promoteProfile": "ارتقای پروفایل",
+      "unlockPremium": "بازکردن محتوای ویژه",
+      "sendGifts": "ارسال هدیه‌های مجازی"
+    }
   },
   "payments": {
     "title": "تراکنش‌های گذشته"

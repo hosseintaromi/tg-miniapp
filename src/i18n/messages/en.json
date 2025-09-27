@@ -15,7 +15,14 @@
     "suffix": "Coins"
   },
   "consumption": {
-    "title": "Past Consumption"
+    "title": "Past Consumption",
+    "featureUsage": "Feature Usage",
+    "items": {
+      "boostPost": "Boost Post",
+      "promoteProfile": "Promote Profile",
+      "unlockPremium": "Unlock Premium Content",
+      "sendGifts": "Send Virtual Gifts"
+    }
   },
   "payments": {
     "title": "Past Transactions"

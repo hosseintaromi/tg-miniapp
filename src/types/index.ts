@@ -14,8 +14,10 @@ export type Payment = {
 
 export type ConsumptionRecord = {
   id: string;
-  title: string;
-  subtitle: string;
+  title?: string;
+  subtitle?: string;
+  titleKey?: string;
+  subtitleKey?: string;
   coins: number;
   date: string;
 };

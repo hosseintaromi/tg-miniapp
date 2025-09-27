@@ -14,7 +14,7 @@ export default async function LocaleLayout({ children, params }: Props) {
   const messages = await getMessages();
 
   return (
-    <NextIntlClientProvider messages={messages}>
+    <NextIntlClientProvider messages={messages} locale={locale} timeZone="Asia/Tehran">
       <ClientProviders>
         <AppShell>{children}</AppShell>
       </ClientProviders>

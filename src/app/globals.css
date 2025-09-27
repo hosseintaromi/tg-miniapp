@@ -1,21 +1,37 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #0f1a10;
+  --surface: #0e2715;
+  --surface-2: #0b2012;
+  --foreground: #e7f3e9;
+  --muted: #9fb4a5;
+  --brand: #7cff3a;
+  --brand-700: #44cc1b;
+  --danger: #ff5a5f;
+  --radius: 16px;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
   --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-brand: var(--brand);
+  --color-brand-700: var(--brand-700);
+  --color-danger: var(--danger);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #0f1a10;
+    --surface: #0e2715;
+    --surface-2: #0b2012;
+    --foreground: #e7f3e9;
+    --muted: #9fb4a5;
   }
 }
 
@@ -27,4 +43,29 @@ body {
 
 html[dir="rtl"] {
   direction: rtl;
+}
+
+.container-safe {
+  padding-left: max(16px, env(safe-area-inset-left));
+  padding-right: max(16px, env(safe-area-inset-right));
+}
+
+.card {
+  background: var(--surface);
+  border-radius: var(--radius);
+}
+
+.card-ghost {
+  background: var(--surface-2);
+  border-radius: var(--radius);
+}
+
+.btn-primary {
+  background: var(--brand);
+  color: #0a0a0a;
+  border-radius: 12px;
+}
+
+.btn-primary:active {
+  background: var(--brand-700);
 }

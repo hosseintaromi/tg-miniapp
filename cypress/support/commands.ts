@@ -1,10 +1,13 @@
 /// <reference types="cypress" />
 
 // Custom commands for the Telegram Mini App
-declare module "cypress" {
-  interface Chainable {
-    visitLocale(locale: "en" | "fa", path?: string): Chainable<Element>;
-    checkTranslation(key: string, expectedText: string): Chainable<Element>;
+declare global {
+  // eslint-disable-next-line @typescript-eslint/no-namespace
+  namespace Cypress {
+    interface Chainable {
+      visitLocale(locale: "en" | "fa", path?: string): Chainable<Element>;
+      checkTranslation(key: string, expectedText: string): Chainable<Element>;
+    }
   }
 }
 

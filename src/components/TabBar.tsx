@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { usePathname, useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
+import { ProfileCircle, Activity, Wallet3, AddCircle } from "iconsax-react";
 
 export function TabBar() {
   const pathname = usePathname() || "";
@@ -10,10 +11,30 @@ export function TabBar() {
   const t = useTranslations();
 
   const tabs = [
-    { key: "profile", href: `/${locale}/profile`, label: t("tabs.profile") },
-    { key: "consumption", href: `/${locale}/consumption`, label: t("tabs.consumption") },
-    { key: "payments", href: `/${locale}/payments`, label: t("tabs.payments") },
-    { key: "buy", href: `/${locale}/buy-coins`, label: t("tabs.buy") },
+    {
+      key: "profile",
+      href: `/${locale}/profile`,
+      label: t("tabs.profile"),
+      icon: ProfileCircle,
+    },
+    {
+      key: "consumption",
+      href: `/${locale}/consumption`,
+      label: t("tabs.consumption"),
+      icon: Activity,
+    },
+    {
+      key: "payments",
+      href: `/${locale}/payments`,
+      label: t("tabs.payments"),
+      icon: Wallet3,
+    },
+    {
+      key: "buy",
+      href: `/${locale}/buy-coins`,
+      label: t("tabs.buy"),
+      icon: AddCircle,
+    },
   ];
 
   return (
@@ -21,18 +42,20 @@ export function TabBar() {
       className="fixed bottom-0 left-0 right-0 bg-[var(--surface-2)] py-2"
       style={{ borderTopLeftRadius: 24, borderTopRightRadius: 24 }}
     >
-      <div className="container-safe grid grid-cols-4 gap-2 text-sm">
+      <div className="container-safe grid grid-cols-4 gap-2 text-xs">
         {tabs.map((tab) => {
           const active =
             pathname.includes(`/${tab.key}`) ||
             (tab.key === "profile" && pathname.endsWith(`/${locale}`));
+          const IconComponent = tab.icon;
           return (
             <Link
               key={tab.key}
               href={tab.href}
-              className={`text-center px-2 py-2 rounded-md ${active ? "text-[var(--brand)]" : "text-[var(--muted)]"}`}
+              className={`flex flex-col items-center px-2 py-2 rounded-md gap-1 ${active ? "text-[var(--brand)]" : "text-[var(--muted)]"}`}
             >
-              {tab.label}
+              <IconComponent size={20} variant={active ? "Bold" : "Outline"} />
+              <span className="text-xs">{tab.label}</span>
             </Link>
           );
         })}

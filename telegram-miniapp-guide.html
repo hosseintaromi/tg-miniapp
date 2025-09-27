@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>راهنمای ساخت مینی‌اپ تلگرام</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Vazir', 'Tahoma', sans-serif;
+            line-height: 1.8;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            color: white;
+            padding: 40px 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        
+        .header p {
+            font-size: 1.2em;
+            opacity: 0.9;
+        }
+        
+        .content {
+            padding: 40px 30px;
+        }
+        
+        .step {
+            margin-bottom: 40px;
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid #f0f0f0;
+            transition: all 0.3s ease;
+        }
+        
+        .step:hover {
+            border-color: #2196F3;
+            box-shadow: 0 10px 20px rgba(33, 150, 243, 0.1);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-left: 15px;
+            font-size: 1.2em;
+        }
+        
+        .step h3 {
+            display: inline-block;
+            color: #333;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+        }
+        
+        .step p {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            overflow-x: auto;
+            direction: ltr;
+            text-align: left;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .highlight strong {
+            color: #856404;
+        }
+        
+        .success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .warning {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            color: #856404;
+        }
+        
+        .info {
+            background: #d1ecf1;
+            border: 1px solid #bee5eb;
+            color: #0c5460;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            background: linear-gradient(45deg, #2196F3, #21CBF3);
+            color: white;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 10px 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .checklist {
+            list-style: none;
+        }
+        
+        .checklist li {
+            padding: 8px 0;
+            position: relative;
+            padding-right: 30px;
+        }
+        
+        .checklist li::before {
+            content: '✓';
+            position: absolute;
+            right: 0;
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .footer {
+            background: #f8f9fa;
+            padding: 30px;
+            text-align: center;
+            border-top: 1px solid #e9ecef;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 راهنمای ساخت مینی‌اپ تلگرام</h1>
+            <p>مرحله به مرحله از صفر تا صد</p>
+        </div>
+        
+        <div class="content">
+            <div class="step">
+                <span class="step-number">1</span>
+                <h3>ایجاد بات تلگرام</h3>
+                <p>ابتدا باید یک بات تلگرام برای مینی‌اپ خود ایجاد کنید:</p>
+                <ul class="checklist">
+                    <li>به @BotFather در تلگرام پیام دهید</li>
+                    <li>دستور /newbot را ارسال کنید</li>
+                    <li>نام بات و username آن را انتخاب کنید</li>
+                    <li>Token بات را کپی و ذخیره کنید</li>
+                </ul>
+                <div class="code-block">
+/newbot
+Bot Name: My Mini App Bot
+Username: my_miniapp_bot
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <h3>تنظیمات مینی‌اپ</h3>
+                <p>بات خود را برای مینی‌اپ پیکربندی کنید:</p>
+                <div class="code-block">
+/mybots
+انتخاب بات → Bot Settings → Menu Button
+Menu Button Text: Open App
+Menu Button URL: https://your-domain.com
+                </div>
+                <div class="highlight warning">
+                    <strong>نکته مهم:</strong> URL باید HTTPS باشد و دامنه معتبر داشته باشد
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <h3>توسعه اپلیکیشن</h3>
+                <p>اپلیکیشن وب خود را با استفاده از Telegram WebApp SDK توسعه دهید:</p>
+                <div class="code-block">
+&lt;script src="https://telegram.org/js/telegram-web-app.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+  // دسترسی به Telegram WebApp API
+  const tg = window.Telegram.WebApp;
+  
+  // نمایش اطلاعات کاربر
+  const user = tg.initDataUnsafe?.user;
+  console.log('User:', user);
+  
+  // تنظیم رنگ theme
+  tg.setHeaderColor('#2196F3');
+  
+  // آماده سازی اپ
+  tg.ready();
+&lt;/script&gt;
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <h3>ویژگی‌های کلیدی</h3>
+                <p>ویژگی‌های مهم که باید در مینی‌اپ خود پیاده‌سازی کنید:</p>
+                <ul class="checklist">
+                    <li>تشخیص theme (تیره/روشن) کاربر</li>
+                    <li>دکمه بازگشت (BackButton)</li>
+                    <li>دکمه اصلی (MainButton)</li>
+                    <li>نمایش HapticFeedback</li>
+                    <li>ذخیره داده‌ها در CloudStorage</li>
+                    <li>پرداخت درون‌اپلیکیشنی</li>
+                </ul>
+                <div class="code-block">
+// تنظیم دکمه اصلی
+tg.MainButton.setText('ادامه');
+tg.MainButton.show();
+tg.MainButton.onClick(() => {
+  console.log('Main button clicked');
+});
+
+// نمایش دکمه بازگشت
+tg.BackButton.show();
+tg.BackButton.onClick(() => {
+  // منطق بازگشت
+});
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">5</span>
+                <h3>طراحی رابط کاربری</h3>
+                <p>نکات مهم برای طراحی UI مناسب:</p>
+                <div class="highlight info">
+                    <ul class="checklist">
+                        <li>استفاده از رنگ‌های Telegram Theme</li>
+                        <li>طراحی Responsive برای موبایل</li>
+                        <li>حداکثر ارتفاع viewport</li>
+                        <li>استفاده از Safe Area</li>
+                        <li>انیمیشن‌های نرم</li>
+                    </ul>
+                </div>
+                <div class="code-block">
+/* CSS برای تطبیق با Telegram */
+body {
+  margin: 0;
+  padding: 0;
+  color: var(--tg-theme-text-color);
+  background: var(--tg-theme-bg-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto;
+}
+
+.main-container {
+  height: 100vh;
+  padding: env(safe-area-inset-top) env(safe-area-inset-right) 
+          env(safe-area-inset-bottom) env(safe-area-inset-left);
+}
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">6</span>
+                <h3>تست و دیباگ</h3>
+                <p>نحوه تست مینی‌اپ در محیط‌های مختلف:</p>
+                <div class="highlight success">
+                    <strong>روش‌های تست:</strong>
+                    <ul class="checklist">
+                        <li>استفاده از Telegram Desktop (dev tools)</li>
+                        <li>تست در موبایل با لینک مستقیم</li>
+                        <li>استفاده از ngrok برای تست محلی</li>
+                        <li>بررسی console برای خطاها</li>
+                    </ul>
+                </div>
+                <div class="code-block">
+# تست محلی با ngrok
+npm install -g ngrok
+ngrok http 3000
+
+# سپس URL ngrok را در تنظیمات بات قرار دهید
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">7</span>
+                <h3>استقرار (Deployment)</h3>
+                <p>راه‌های مختلف برای انتشار مینی‌اپ:</p>
+                <div class="code-block">
+# استقرار با Vercel
+npm install -g vercel
+vercel
+
+# استقرار با Docker
+docker build -t my-miniapp .
+docker run -p 3000:3000 my-miniapp
+
+# استقرار با Netlify
+npm run build
+# آپلود dist folder به Netlify
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">8</span>
+                <h3>تنظیمات نهایی</h3>
+                <p>مراحل نهایی برای راه‌اندازی مینی‌اپ:</p>
+                <ul class="checklist">
+                    <li>تست کامل روی دستگاه‌های مختلف</li>
+                    <li>بررسی عملکرد و سرعت</li>
+                    <li>تنظیم Analytics</li>
+                    <li>پیکربندی CDN</li>
+                    <li>تنظیم SSL Certificate</li>
+                    <li>بررسی امنیت</li>
+                </ul>
+                <div class="highlight warning">
+                    <strong>نکات امنیتی:</strong>
+                    <br>• همیشه داده‌های کاربر را در سرور validate کنید
+                    <br>• از HTTPS استفاده کنید
+                    <br>• initData را در backend تأیید کنید
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">9</span>
+                <h3>منابع مفید</h3>
+                <p>لینک‌ها و منابع کمکی:</p>
+                <div class="highlight info">
+                    <a href="https://core.telegram.org/bots/webapps" class="btn" target="_blank">مستندات رسمی</a>
+                    <a href="https://github.com/telegram/webapps-examples" class="btn" target="_blank">نمونه کدها</a>
+                    <a href="https://telegram.org/js/telegram-web-app.js" class="btn" target="_blank">WebApp SDK</a>
+                </div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">10</span>
+                <h3>نمونه پروژه</h3>
+                <p>پروژه نمونه که در این آموزش ساخته شد:</p>
+                <div class="code-block">
+# کلون پروژه
+git clone https://github.com/hosseintaromi/tg-miniapp.git
+
+# نصب dependencies
+cd tg-miniapp
+yarn install
+
+# اجرای پروژه
+yarn dev
+
+# ساخت برای production
+yarn build
+
+# اجرای تست‌ها
+yarn test:e2e
+                </div>
+                <div class="highlight success">
+                    <strong>ویژگی‌های پروژه نمونه:</strong>
+                    <ul class="checklist">
+                        <li>چندزبانه (فارسی/انگلیسی)</li>
+                        <li>سیستم سکه و پرداخت</li>
+                        <li>طراحی Responsive</li>
+                        <li>تست‌های کامل E2E</li>
+                        <li>CI/CD Pipeline</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>🎉 <strong>تبریک!</strong> شما آماده ساخت مینی‌اپ تلگرام هستید</p>
+            <p>برای سوالات بیشتر می‌توانید به مستندات رسمی تلگرام مراجعه کنید</p>
+        </div>
+    </div>
+</body>
+</html>

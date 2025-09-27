@@ -38,7 +38,20 @@ export function AppShell({ children }: { children: React.ReactNode }) {
             tg
           </Link>
           <h1 className="text-lg font-semibold">{title}</h1>
-          <div className="w-6" />
+          <div className="flex gap-2">
+            <Link
+              href={pathname?.replace(`/${locale}`, "/en") || "/en"}
+              className={`px-2 py-1 text-xs rounded ${locale === "en" ? "bg-[var(--brand)] text-black" : "text-[var(--muted)]"}`}
+            >
+              EN
+            </Link>
+            <Link
+              href={pathname?.replace(`/${locale}`, "/fa") || "/fa"}
+              className={`px-2 py-1 text-xs rounded ${locale === "fa" ? "bg-[var(--brand)] text-black" : "text-[var(--muted)]"}`}
+            >
+              فا
+            </Link>
+          </div>
         </div>
       </header>
       <main className="flex-1 container-safe pt-4 pb-24">{children}</main>

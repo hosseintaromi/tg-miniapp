@@ -5,5 +5,9 @@
   "tabs.payments": "پرداخت‌ها",
   "tabs.buy": "خرید سکه",
   "profile.balance": "موجودی",
-  "coins.suffix": "سکه"
+  "coins.suffix": "سکه",
+  "consumption.title": "مصرف‌های گذشته",
+  "payments.title": "تراکنش‌های گذشته",
+  "buy.choose": "یک بسته انتخاب کنید",
+  "buy.cta": "خرید"
 }

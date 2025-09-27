@@ -5,5 +5,9 @@
   "tabs.payments": "Payments",
   "tabs.buy": "Buy Coins",
   "profile.balance": "Balance",
-  "coins.suffix": "Coins"
+  "coins.suffix": "Coins",
+  "consumption.title": "Past Consumption",
+  "payments.title": "Past Transactions",
+  "buy.choose": "Choose a package",
+  "buy.cta": "Buy Now"
 }

@@ -1,1 +1,1 @@
-export { default } from "@/i18n/request";
+export { default } from "../messages";

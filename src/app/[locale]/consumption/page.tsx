@@ -2,9 +2,10 @@
 import { useAppState } from "@/services/store";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { ListCard } from "@/components/ListCard";
-import { CoinBadge } from "@/components/CoinBadge";
 import { NoSSR } from "@/components/NoSSR";
+import { PageHeader } from "@/components/PageHeader";
+import { StatsCard } from "@/components/StatsCard";
+import { ConsumptionCard } from "@/components/ConsumptionCard";
 
 export default function ConsumptionPage() {
   const { state } = useAppState();
@@ -20,43 +21,38 @@ export default function ConsumptionPage() {
         transition={{ duration: 0.25 }}
         className="flex flex-col gap-4"
       >
-        <h2 className="text-lg font-semibold">{t("consumption.title")}</h2>
+        <PageHeader title={t("consumption.title")} />
 
         {/* Summary */}
         <div className="grid grid-cols-2 gap-3">
-          <div className="card p-4 text-center">
-            <div className="text-xs text-[var(--muted)] mb-1">{t("coins.suffix")}</div>
-            <div className="text-xl font-bold">-{totalSpent.toLocaleString()}</div>
-          </div>
-          <div className="card p-4 text-center">
-            <div className="text-xs text-[var(--muted)] mb-1">{t("consumption.featureUsage")}</div>
-            <div className="text-xl font-bold">{state.consumptions.length}</div>
-          </div>
+          <StatsCard
+            label={t("coins.suffix")}
+            value={`-${totalSpent.toLocaleString()}`}
+            variant="danger"
+          />
+          <StatsCard
+            label={t("consumption.featureUsage")}
+            value={state.consumptions.length}
+            delay={0.1}
+          />
         </div>
 
         {/* List */}
-        {state.consumptions.map((c, index) => {
-          const title = c.titleKey ? t(c.titleKey) : c.title;
-          const subtitle = c.subtitleKey ? t(c.subtitleKey) : c.subtitle;
-          return (
-            <motion.div
-              key={c.id}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, delay: index * 0.05 }}
-              className="card p-4 flex items-center gap-3"
-            >
-              <div className="w-9 h-9 rounded-lg bg-[var(--surface)] flex items-center justify-center">
-                ◎
-              </div>
-              <div className="flex-1">
-                <div className="font-semibold">{title}</div>
-                <div className="text-xs text-[var(--muted)]">{subtitle}</div>
-              </div>
-              <CoinBadge amount={c.coins} sign="-" />
-            </motion.div>
-          );
-        })}
+        <div className="flex flex-col gap-3">
+          {state.consumptions.map((c, index) => {
+            const title = c.titleKey ? t(c.titleKey) : c.title;
+            const subtitle = c.subtitleKey ? t(c.subtitleKey) : c.subtitle;
+            return (
+              <ConsumptionCard
+                key={c.id}
+                consumption={c}
+                title={title}
+                subtitle={subtitle}
+                delay={index * 0.05}
+              />
+            );
+          })}
+        </div>
       </motion.div>
     </NoSSR>
   );

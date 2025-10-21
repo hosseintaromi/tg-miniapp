@@ -2,8 +2,10 @@
 import { useAppState } from "@/services/store";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { ListCard } from "@/components/ListCard";
 import { NoSSR } from "@/components/NoSSR";
+import { PageHeader } from "@/components/PageHeader";
+import { StatsCard } from "@/components/StatsCard";
+import { PaymentCard } from "@/components/PaymentCard";
 import { useParams } from "next/navigation";
 import { formatNumber, formatCurrency, toPersianDigits } from "@/lib/utils";
 
@@ -24,58 +26,31 @@ export default function PaymentsPage() {
         transition={{ duration: 0.25 }}
         className="flex flex-col gap-4"
       >
-        <h2 className="text-lg font-semibold">{t("payments.title")}</h2>
+        <PageHeader title={t("payments.title")} />
 
         {/* Summary */}
         <div className="grid grid-cols-2 gap-3">
-          <div className="card p-4 text-center">
-            <div className="text-xs text-[var(--muted)] mb-1">USD</div>
-            <div className="text-xl font-bold">${formatCurrency(totalUsd, locale)}</div>
-          </div>
-          <div className="card p-4 text-center">
-            <div className="text-xs text-[var(--muted)] mb-1">{t("coins.suffix")}</div>
-            <div className="text-xl font-bold">+{formatNumber(totalCoins, locale)}</div>
-          </div>
+          <StatsCard label="USD" value={`$${formatCurrency(totalUsd, locale)}`} variant="success" />
+          <StatsCard
+            label={t("coins.suffix")}
+            value={`+${formatNumber(totalCoins, locale)}`}
+            delay={0.1}
+          />
         </div>
 
         {/* List */}
         <div className="flex flex-col gap-3">
-          {state.payments.map((p, index) => (
-            <motion.div
-              key={p.id}
-              initial={{ opacity: 0, y: 8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.2, delay: index * 0.05 }}
-              className="card p-4 flex items-center gap-3"
-            >
-              <div className="w-10 h-10 rounded-lg bg-[var(--surface)] flex items-center justify-center overflow-hidden p-1.5">
-                <img
-                  src={p.method === "telegram_stars" ? "/telegram-stars.svg" : "/zarinpal-logo.png"}
-                  alt={p.method}
-                  className={
-                    p.method === "telegram_stars"
-                      ? "w-full h-full object-contain"
-                      : "w-7 h-7 object-contain"
-                  }
-                />
-              </div>
-
-              <div className="flex-1">
-                <div className="font-semibold">
-                  {formatNumber(p.coins, locale)} {t("coins.suffix")}
-                </div>
-                <div className="text-xs text-[var(--muted)]">
-                  {locale === "fa" ? toPersianDigits(p.date) : p.date} •{" "}
-                  {p.method === "telegram_stars" ? "Telegram Stars" : "ZarinPal"}
-                </div>
-              </div>
-
-              <div className="text-right">
-                <div className="font-semibold text-green-400">
-                  +${formatCurrency(p.amountUsd, locale)}
-                </div>
-              </div>
-            </motion.div>
+          {state.payments.map((payment, index) => (
+            <PaymentCard
+              key={payment.id}
+              payment={payment}
+              locale={locale}
+              formatNumber={formatNumber}
+              formatCurrency={formatCurrency}
+              toPersianDigits={toPersianDigits}
+              coinsLabel={t("coins.suffix")}
+              delay={index * 0.05}
+            />
           ))}
         </div>
       </motion.div>

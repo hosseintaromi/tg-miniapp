@@ -1,9 +1,9 @@
 import { motion } from "framer-motion";
 import { CoinBadge } from "./CoinBadge";
-import type { Consumption } from "@/types";
+import type { ConsumptionRecord } from "@/types";
 
 interface ConsumptionCardProps {
-  consumption: Consumption;
+  consumption: ConsumptionRecord;
   title: string;
   subtitle?: string;
   delay?: number;

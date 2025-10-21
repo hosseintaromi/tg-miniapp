@@ -1,21 +1,24 @@
 {
   "app": {
-    "title": "Consumption"
+    "title": "Abbas Agha",
+    "welcome": "Welcome to Abbas Agha!"
   },
   "tabs": {
+    "home": "Home",
     "profile": "Profile",
-    "consumption": "Consumption",
+    "consumption": "Usage",
     "payments": "Payments",
-    "buy": "Buy Coins"
+    "buy": "Buy Coins",
+    "settings": "Settings"
   },
   "profile": {
     "balance": "Balance"
   },
   "coins": {
-    "suffix": "Coins"
+    "suffix": "coins"
   },
   "consumption": {
-    "title": "Past Consumption",
+    "title": "Past Usage",
     "featureUsage": "Feature Usage",
     "items": {
       "boostPost": "Boost Post",
@@ -25,10 +28,24 @@
     }
   },
   "payments": {
-    "title": "Past Transactions"
+    "title": "Transaction History"
   },
   "buy": {
     "choose": "Choose a package",
-    "cta": "Buy Now"
+    "cta": "Buy"
+  },
+  "settings": {
+    "title": "Settings",
+    "language": "Language",
+    "theme": "Color Theme",
+    "themes": {
+      "orange": "Orange",
+      "green": "Green",
+      "blue": "Blue"
+    },
+    "languages": {
+      "fa": "فارسی",
+      "en": "English"
+    }
   }
 }

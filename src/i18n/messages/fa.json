@@ -1,12 +1,15 @@
 {
   "app": {
-    "title": "مصرف"
+    "title": "عباس آقا",
+    "welcome": "به عباس آقا خوش آمدید!"
   },
   "tabs": {
+    "home": "خانه",
     "profile": "پروفایل",
     "consumption": "مصرف",
     "payments": "پرداخت‌ها",
-    "buy": "خرید سکه"
+    "buy": "خرید سکه",
+    "settings": "تنظیمات"
   },
   "profile": {
     "balance": "موجودی"
@@ -30,5 +33,19 @@
   "buy": {
     "choose": "یک بسته انتخاب کنید",
     "cta": "خرید"
+  },
+  "settings": {
+    "title": "تنظیمات",
+    "language": "زبان",
+    "theme": "تم رنگی",
+    "themes": {
+      "orange": "نارنجی",
+      "green": "سبز",
+      "blue": "آبی"
+    },
+    "languages": {
+      "fa": "فارسی",
+      "en": "English"
+    }
   }
 }

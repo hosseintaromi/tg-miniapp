@@ -6,15 +6,11 @@ import { motion } from "framer-motion";
 import { COIN_PACKS } from "@/constants";
 import { PaymentBottomSheet } from "@/components/PaymentBottomSheet";
 import { NoSSR } from "@/components/NoSSR";
-import { useParams } from "next/navigation";
-import { formatNumber, formatCurrency, toPersianDigits } from "@/lib/utils";
 import type { PaymentMethod } from "@/types";
 
 export default function BuyCoinsPage() {
   const { actions } = useAppState();
   const t = useTranslations();
-  const params = useParams<{ locale: string }>();
-  const locale = params?.locale ?? "fa";
   const [selected, setSelected] = useState(COIN_PACKS[0].id);
   const [showPayment, setShowPayment] = useState(false);
   const [brokenImages, setBrokenImages] = useState<Set<string>>(new Set());

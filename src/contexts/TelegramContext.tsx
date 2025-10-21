@@ -5,7 +5,6 @@ import {
   TelegramUser,
   TelegramWebApp,
   getTelegram,
-  getTelegramUser,
   isTelegramEnvironment,
   validateTelegramData,
   getTelegramInitData,

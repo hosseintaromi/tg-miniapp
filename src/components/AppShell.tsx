@@ -2,7 +2,7 @@
 import Link from "next/link";
 import { usePathname, useParams } from "next/navigation";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { TabBar } from "./TabBar";
 import { ErrorBoundary } from "./ErrorBoundary";
 import { User as UserIcon } from "iconsax-react";

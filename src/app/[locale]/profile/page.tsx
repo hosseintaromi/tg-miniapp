@@ -1,13 +1,11 @@
 "use client";
-import { useTranslations } from "next-intl";
 import { useAppState } from "@/services/store";
 import { useTelegram } from "@/contexts/TelegramContext";
 import { motion } from "framer-motion";
 import { NoSSR } from "@/components/NoSSR";
+import { useTranslations } from "next-intl";
 
 export default function ProfilePage() {
-  const t = useTranslations();
-
   return (
     <NoSSR
       fallback={
